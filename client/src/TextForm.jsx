@@ -18,7 +18,7 @@ const TextForm = ({ refetchData }) => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/compare',
+        'https://ai-based-text-similarity-app.onrender.com/compare',
         {
           text1,
           text2,

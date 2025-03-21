@@ -15,7 +15,7 @@ function App() {
     const fetchResults = async () => {
       try {
         const response = await axios(
-          'http://localhost:5000/compare/all'
+          'https://ai-based-text-similarity-app.onrender.com/compare/all'
         );
         setSimilarityResults(
           response.data?.compares || []
