@@ -15,9 +15,13 @@ const AllSimilarity = ({ results }) => {
           {results.map((result, index) => (
             <li key={index}>
               <strong>Text 1:</strong>
-              {result.text1} <br />
+              <p>
+                {result.text1} <br />
+              </p>
               <strong>Text 2:</strong>
-              {result.text2} <br />
+              <p>
+                {result.text2} <br />
+              </p>
               <strong>Similarity Score:</strong>
               {result.similarityScore.toFixed(2)}
             </li>
@@ -42,6 +46,10 @@ const Wrapper = styled.div`
       padding-bottom: 5px;
       margin-bottom: 25px;
       border-bottom: 1px solid #ccc;
+      p {
+        max-width: 13rem;
+        overflow-y: auto;
+      }
     }
   }
   h2 {
