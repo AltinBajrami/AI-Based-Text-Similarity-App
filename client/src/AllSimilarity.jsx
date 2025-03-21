@@ -14,11 +14,14 @@ const AllSimilarity = ({ results }) => {
         <ul className="data-list">
           {results.map((result, index) => (
             <li key={index}>
-              <strong>Text 1:</strong>
               <p>
-                {result.text1} <br />
+                <strong> Text 1: </strong>{' '}
+                {result.text1}
               </p>
-              <strong>Text 2:</strong>
+              <p>
+                <strong> Text 2:</strong>
+                {result.text2}
+              </p>
               <p>
                 {result.text2} <br />
               </p>
@@ -46,6 +49,7 @@ const Wrapper = styled.div`
       padding-bottom: 5px;
       margin-bottom: 25px;
       border-bottom: 1px solid #ccc;
+      align-items: center;
       p {
         max-width: 13rem;
         overflow-y: auto;
