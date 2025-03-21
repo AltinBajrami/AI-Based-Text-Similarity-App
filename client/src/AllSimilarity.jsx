@@ -22,9 +22,6 @@ const AllSimilarity = ({ results }) => {
                 <strong> Text 2:</strong>
                 {result.text2}
               </p>
-              <p>
-                {result.text2} <br />
-              </p>
               <strong>Similarity Score:</strong>
               {result.similarityScore.toFixed(2)}
             </li>
