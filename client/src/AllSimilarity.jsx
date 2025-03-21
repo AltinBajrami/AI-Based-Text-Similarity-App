@@ -4,7 +4,19 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-const AllSimilarity = ({ results }) => {
+const AllSimilarity = ({
+  results,
+  isLoading,
+}) => {
+  if (isLoading) {
+    return (
+      <Wrapper>
+        <h2>All Similarity Results</h2>
+        <div className="loading"></div>
+      </Wrapper>
+    );
+  }
+
   return (
     <Wrapper>
       <h2>All Similarity Results</h2>
@@ -57,6 +69,23 @@ const Wrapper = styled.div`
     font-size: 22px;
     margin-bottom: 20px;
     letter-spacing: 1px;
+  }
+  .loading {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 `;
 export default AllSimilarity;

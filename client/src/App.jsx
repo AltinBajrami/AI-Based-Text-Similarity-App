@@ -10,9 +10,12 @@ function App() {
     setSimilarityResults,
   ] = useState([]);
   const [refresh, setRefresh] = useState(false);
+  const [isLoading, setIsLoading] =
+    useState(true);
 
   useEffect(() => {
     const fetchResults = async () => {
+      setIsLoading(true);
       try {
         const response = await axios(
           'https://ai-based-text-similarity-app.onrender.com/compare/all'
@@ -26,6 +29,7 @@ function App() {
           error
         );
       }
+      setIsLoading(false);
     };
 
     fetchResults();
@@ -39,6 +43,7 @@ function App() {
       <TextForm refetchData={refetchData} />
       <AllSimilarity
         results={similarityResults}
+        isLoading={isLoading}
       />
     </Wrapper>
   );
